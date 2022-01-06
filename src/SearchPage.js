@@ -14,8 +14,6 @@ class SearchPage extends React.Component {
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <p style={{textAlign:"right"}}><Link to={"/HomePage"}><button style={{background:"lightblue"}}> Home Page</button></Link>
-                    <Link to={"/LoginPage"}><button style={{background:"red"}} onClick={this.logOut}>Log Out</button></Link></p>
                 <h1>Search For Sales Here <BiSearch/></h1>
 
 

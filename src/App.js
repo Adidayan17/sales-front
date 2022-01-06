@@ -8,36 +8,47 @@ import ShopListPage from "./ShopsListPage"
 import SearchPage from "./SearchPage"
 import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
+import Cookies from "universal-cookie/es6";
+import NavigationBar from "./NavigationBar";
 
 
 class App extends React.Component {
-  render() {
+    state = {
+        loggedIn :true,
 
+    }
+    componentDidMount() {
+        const cookies = new Cookies();
+        if(cookies.get("token") && cookies.get("token").length>0) {
+            this.setState({loggedIn :true });
 
-    return (
-        <div>
-            <BrowserRouter>
+        }
+    }
 
-                    <div>
+    render() {
+        { console.log(this.state.loggedIn)}
+        return (
+            <div className="App">
 
-                        <Route path={"/HomePage"} component={HomePage}/>
-                        <Route path={"/SettingsPage"} component={SettingsPage}/>
-                        <Route path={"/DashboardPage"} component={DashboardPage}/>
-                        <Route path={"/ShopsListPage"} component={ShopListPage}/>
-                        <Route path={"/SearchPage"} component={SearchPage}/>
-
-
-                    </div>
-                    <div>
-                        <Route path={"/"} component={LoginPage}/>
-
-                    </div>
-
+                <BrowserRouter>
+                    {this.state.loggedIn ?
+                        <div>
+                            <NavigationBar/>
+                            <Route path={"/HomePage"} component={HomePage}/>
+                            <Route path={"/SettingsPage"} component={SettingsPage}/>
+                            <Route path={"/DashboardPage"} component={DashboardPage}/>
+                            <Route path={"/ShopsListPage"} component={ShopListPage}/>
+                            <Route path={"/SearchPage"} component={SearchPage}/>
+                        </div>:
+                        <div>
+                            <Route path={"/"} component={LoginPage}/>
+                        </div>
+                    }
             </BrowserRouter>
 
 
 
-          <h3 className={"credit"}>This project made by Amit & Adi Dayan</h3>
+          <h5 className={"credit"}>This project made by Amit & Adi Dayan & Barak Bitan</h5>
         </div>
     );
   }

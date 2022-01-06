@@ -6,15 +6,10 @@ import {AiOutlineHome} from "react-icons/ai";
 
 class HomePage extends React.Component {
 
-    logOut=()=>{
-        let cookies=new Cookies();
-        cookies.remove("token");
-        window.location.reload();
-    }
+
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <p style={{textAlign:"right"}}><Link to={"/LoginPage"}><button style={{background:"red"}} onClick={this.logOut}>Log Out</button></Link></p>
                 <h1 style={{color:"black"}}>Home Page <AiOutlineHome/></h1>
                 <div>
                     <p>
