@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
+import {FiSettings} from "react-icons/fi";
+
 
 
 class SettingsPage extends React.Component {
@@ -13,15 +15,19 @@ class SettingsPage extends React.Component {
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <h1>Setting</h1>
+                <p style={{textAlign:"right"}}><Link to={"/HomePage"}><button style={{background:"lightblue"}}> Home Page</button></Link>
+                <Link to={"/LoginPage"}><button style={{background:"red"}} onClick={this.logOut}>Log Out</button></Link></p>
+                <h1>Setting<FiSettings/></h1>
+
                 <h3>Select the organizations that belong to you :</h3>
-                <input type={"checkbox"}/>Some organization<br></br>
-                <input type={"checkbox"}/>Some organization<br></br>
-                <input type={"checkbox"}/>Some organization<br></br>
-                <input type={"checkbox"}/>Some organization<br></br>
-                <input type={"checkbox"}/>Some organization<br></br>
-                <Link to={"/HomePage"}><button style={{background:"lightblue",width:"150px",height:"50px",margin:"5px"}}> Home Page</button></Link>
-                <p style={{textAlign:"right"}}><Link to={"/LoginPage"}><button style={{background:"red"}} onClick={this.logOut}>Log Out</button></Link></p>
+                <ul style={{textAlign:"left"}}>
+                <li><input type={"checkbox"}/>The Teachers organization</li>
+                    <li><input type={"checkbox"}/>Hever</li>
+                    <li><input type={"checkbox"}/>Tov organization</li>
+                    <li><input type={"checkbox"}/>Club 365 </li>
+                    <li><input type={"checkbox"}/>Life Style</li>
+                </ul>
+
             </div>
         )
 
