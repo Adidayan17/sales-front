@@ -1,6 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Cookies from "universal-cookie/es6";
+import Sale from "./Sale";
 
 
 class DashboardPage extends React.Component {
@@ -17,9 +16,8 @@ class DashboardPage extends React.Component {
                 <h3>Your promotions are here :) </h3>
                 {this.state.sales.map(sale=>{
                     return(
-                        <div style={{border: "black solid 4px", width: "50%", textAlign: "center",marginBottom:"3%",marginLeft:"25%"}}>
-                            <span>{sale.saleText}</span>
-
+                        <div>
+                            <Sale data={sale}/>
                         </div>
                     )
                 })}

@@ -14,7 +14,7 @@ import NavigationBar from "./NavigationBar";
 
 class App extends React.Component {
     state = {
-        loggedIn :true,
+        loggedIn :true,//hard coded !!!!!!
 
     }
     componentDidMount() {
