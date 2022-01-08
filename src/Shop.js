@@ -1,17 +1,12 @@
-
+import {NavLink} from "react-router-dom";
 
 
 function Shop(props){
 
         return(
-            <div style={{border: "black solid 4px", width: "50%", textAlign: "center",marginBottom:"3%"  ,marginLeft:"25%"}}>
-                <h3>Shop Name : </h3>
-//need to be class component to render all sales in map ?
-                //here we will show all sales of store !
-            </div>
-        )
+            <div style={{border: "black solid 6px", width: "25%", textAlign: "center",marginBottom:"3%",marginLeft:"37%"}}>
+                    <h3>Store Name:</h3><NavLink to={"/store/"+props.data.id} style={{textDecoration:"none"}}><h3>{props.data.storeName}</h3></NavLink>
 
-
-
-}
+</div>
+        )}
 export default Shop;

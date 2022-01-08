@@ -1,3 +1,11 @@
+.App{
+  background: lightgray;
+  margin: auto;
+}
 .credit{
   text-align: left;
+}
+.active{
+text-decoration: none;
+  color: black;
 }

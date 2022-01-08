@@ -10,6 +10,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import Cookies from "universal-cookie/es6";
 import NavigationBar from "./NavigationBar";
+import StorePage from "./StorePage";
 
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
                             <Route path={"/DashboardPage"} component={DashboardPage}/>
                             <Route path={"/ShopsListPage"} component={ShopListPage}/>
                             <Route path={"/SearchPage"} component={SearchPage}/>
+                            <Route path={"/store/:id"} component={StorePage}/>
                         </div>:
                         <div>
                             <Route path={"/"} component={LoginPage}/>

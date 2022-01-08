@@ -1,22 +1,22 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Cookies from "universal-cookie/es6";
 import Shop from "./Shop";
 import {BsShop} from "react-icons/bs";
 
 
 class ShopListPage extends React.Component {
-
-    logOut=()=>{
-        let cookies=new Cookies();
-        cookies.remove("token");
-        window.location.reload();
+    state={
+        shops:[{id:1,storeName:"Optic 2000"}]
     }
+
+
     render() {
         return(
             <div style={{textAlign:"center"}}>
                 <h1>Shop List <BsShop/></h1>
-                <Shop/>
+                {this.state.shops.map(shop=>{
+                    return(
+                    <Shop data={shop}/>)
+                })}
             </div>
         )
 

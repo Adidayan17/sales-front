@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
 import {FiSettings} from "react-icons/fi";
 import axios from "axios";
@@ -15,11 +14,7 @@ class SettingsPage extends React.Component {
         this.getOrganizations()
     }
 
-    logOut=()=>{
-        let cookies=new Cookies();
-        cookies.remove("token");
-        window.location.reload();
-    }
+
     handleChange=(e)=> {
         let checked = e.target.checked;
         let saleId=e.target.value;
@@ -49,7 +44,7 @@ class SettingsPage extends React.Component {
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <h1>Setting<FiSettings/></h1>
+                <h1>Setting <FiSettings/></h1>
                 <h2>Select the organizations that belong to you :</h2>
 
                 {this.state.organization.map(organization=>{

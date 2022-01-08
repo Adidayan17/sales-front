@@ -1,6 +1,6 @@
 import './App.css';
 import * as React from "react";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
 
 
@@ -13,21 +13,25 @@ class NavigationBar extends React.Component {
         ]
     }
 
-    logout = () => {
+    logOut = () => {
         const cookies = new Cookies();
         cookies.remove("logged_in");
         window.location.reload();
     }
     render() {
         return (
-            <div style={{marginRight: "20px", marginLeft: "20px", borderRight: "1px solid", paddingRight: "20px"}}>
-                <ul>
+            <div style={{marginRight: "20px", marginLeft: "20px", paddingRight: "20px"}}>
+                <ul style={{ listStyleType:"none",
+                    margin: 0,
+                    padding: 0,
+                    overflow:"hidden",
+                    backgroundColor:"yellow"}}>
                     {
                         this.state.links.map(link => {
                             return (
                                 <NavLink to={link.path} className={"link"} activeClassName={"active"}>
-                                    <li style={{marginBottom: "10px"}}>
-                                        <i>
+                                    <li style={{float: "left",direction:"none",textDecoration:"none"}}>
+                                        <i style={{margin:"10px" ,color:"black"}}>
                                             {link.title}
                                         </i>
                                     </li>
@@ -36,7 +40,7 @@ class NavigationBar extends React.Component {
                         })
                     }
 
-                <button style={{background:"red"}} onClick={this.logOut}>Log Out</button>
+                <button style={{background:"red",float:"right"}} onClick={this.logOut}>Log Out</button>
                 </ul>
             </div>
         )

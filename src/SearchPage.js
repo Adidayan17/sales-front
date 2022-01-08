@@ -44,14 +44,17 @@ componentDidMount() {
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <h1>Search For Sales Here <BiSearch/></h1>
-                <input type={"text"} onChange={this.searching} placeholder={"Your text here ...."}/>
+                <h1>Search For Sales Here  <BiSearch/></h1>
+<p>
+    <input type={"text"} onChange={this.searching} placeholder={"Your text here ...."}/></p>
+
                 {
                     this.filter().map(sale => {
                         return (
                             <Sale data={sale}/>
                         )      })
                 }
+                <p><span>Green border means that you can use this promotions ,and red border means that you can't</span></p>
 
 
 
