@@ -44,7 +44,7 @@ class SettingsPage extends React.Component {
     render() {
         return(
             <div style={{textAlign:"center"}}>
-                <h1>Setting <FiSettings/></h1>
+                <h1>Settings <FiSettings/></h1>
                 <h2>Select the organizations that belong to you :</h2>
 
                 {this.state.organization.map(organization=>{

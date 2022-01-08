@@ -16,10 +16,19 @@ import StorePage from "./StorePage";
 class App extends React.Component {
     state = {
         loggedIn :true,//hard coded !!!!!!
+        textFromWebSocket:""
 
     }
     componentDidMount() {
         const cookies = new Cookies();
+        let token = cookies.get("token");
+        const ws = new WebSocket("ws://localhost:8989/stream?token="+token);
+        ws.onmessage=(message)=> {
+
+            const data = JSON.parse(message.data);
+            this.setState({textFromWebSocket:data.saleText});
+        }
+
         if(cookies.get("token") && cookies.get("token").length>0) {
             this.setState({loggedIn :true });
 
@@ -47,6 +56,9 @@ class App extends React.Component {
                         </div>
                     }
             </BrowserRouter>
+                <div>
+                    {this.state.textFromWebSocket.length>0 && alert("Hello you have a sale to look at "+this.state.textFromWebSocket)}
+                </div>
 
 
 
