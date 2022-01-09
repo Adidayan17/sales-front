@@ -7,7 +7,7 @@ import axios from "axios";
 
 class SearchPage extends React.Component {
     state = {
-        sales:[{saleText:"DFDGdfgdfghfg"}],
+        sales:[],
         searching: "",
         border:""
     }
@@ -72,10 +72,9 @@ if(response.data){
 
                 {
                     this.filter().map(sale => {
-                        {this.ifTheSaleBelongToMe(sale)}
                         return (
                         <Sale data={sale} border={this.state.border}/>
-                        )      })
+                        ) })
                 }
                 <p><span>Green border means that you can use this promotions ,and red border means that you can't</span></p>
 

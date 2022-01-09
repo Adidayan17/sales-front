@@ -8,7 +8,7 @@ import axios from "axios";
 class SettingsPage extends React.Component {
 
     state={
-        organization:[{organizationName:"haha",id:"6"},{organizationName:"kokokok",id:"7"}],
+        organizations:[],
         checked:false
     }
     componentDidMount() {
@@ -68,7 +68,7 @@ class SettingsPage extends React.Component {
             <div style={{textAlign:"center"}}>
                 <h1>Settings <FiSettings/></h1>
                 <h2>Select the organizations that belong to you :</h2>
-                {this.state.organization.map(organization=>{
+                {this.state.organizations.map(organization=>{
                     return(
                         <p>
                             <input type={"checkbox"} onChange={this.handleChange} value={organization.id} checked={this.state.checked}/><label>{organization.organizationName}</label>

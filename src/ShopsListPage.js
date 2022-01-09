@@ -6,7 +6,7 @@ import axios from "axios";
 
 class ShopListPage extends React.Component {
     state={
-        shops:[{id:1,storeName:"Optic 2000"}]
+        shops:[]
     }
     componentDidMount() {
         this.getStores()

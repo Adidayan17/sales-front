@@ -16,6 +16,7 @@ class NavigationBar extends React.Component {
     logOut = () => {
         const cookies = new Cookies();
         cookies.remove("logged_in");
+        cookies.remove("token");
         window.location.reload();
     }
     render() {
