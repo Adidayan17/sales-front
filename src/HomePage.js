@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Cookies from "universal-cookie/es6";
 import {AiOutlineHome} from "react-icons/ai";
 import {GoDashboard} from "react-icons/go";
 import {BsShop} from "react-icons/bs";

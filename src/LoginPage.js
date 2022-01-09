@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
 import {Redirect} from "react-router";
 
@@ -24,16 +23,8 @@ class LoginPage extends React.Component {
             password: password
         })
     }
-    validatePassword(password) {
-        const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-        if (!regex.test(password)){
-            alert("Invalid password");
 
-        }
-        return regex.test(password);
-    }
 signUp=()=>{
-    if (this.validatePassword(this.state.password)){
         let data =new FormData();
         data.append("username",this.state.username)
         data.append("password",this.state.password)
@@ -45,7 +36,7 @@ signUp=()=>{
                 }
                 else {  alert("username already exist !")}
             })}
-}
+
     login=()=>{
         axios.get("http://127.0.0.1:8989/log-in",{
             params: {

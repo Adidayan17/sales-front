@@ -1,7 +1,6 @@
 import React from "react";
 import Shop from "./Shop";
 import {BsShop} from "react-icons/bs";
-import Cookies from "universal-cookie/es6";
 import axios from "axios";
 
 

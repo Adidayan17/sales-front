@@ -15,7 +15,7 @@ import StorePage from "./StorePage";
 
 class App extends React.Component {
     state = {
-        loggedIn :false,//hard coded !!!!!!
+        loggedIn :false,
         textFromWebSocket:""
 
     }
@@ -38,8 +38,8 @@ class App extends React.Component {
     render() {
         { console.log(this.state.loggedIn)}
         return (
-            <div className="App">
 
+            <div className="App">
                 <BrowserRouter>
                     {this.state.loggedIn ?
                         <div>
@@ -56,12 +56,9 @@ class App extends React.Component {
                         </div>
                     }
             </BrowserRouter>
-                <div>
+                <div style={{marginBottom:"25%"}}>
                     {this.state.textFromWebSocket.length>0 && alert("Hello you have a sale to look at "+this.state.textFromWebSocket)}
                 </div>
-
-
-
           <h5 className={"credit"}>This project made by Amit & Adi Dayan & Barak Bitan</h5>
         </div>
     );
