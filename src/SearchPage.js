@@ -6,18 +6,19 @@ import axios from "axios";
 
 
 class SearchPage extends React.Component {
-    state={
-        sales:[{saleText:"10% discount !!!!",belongTo:true},{saleText:"555% discount !!!!",belongTo:false}],
-        searching:""
+    state = {
+        sales:[{saleText:"DFDGdfgdfghfg"}],
+        searching: "",
+        border:""
     }
-componentDidMount() {
+    componentDidMount() {
         this.getSales()
-}
+    }
 
-    searching=(e)=>{
-            let searching=e.target.value
+    searching = (e) => {
+        let searching = e.target.value
         this.setState({
-             searching:searching
+            searching: searching
         })
     }
     filter = () => {
@@ -26,10 +27,30 @@ componentDidMount() {
         })
         return filtered;
     }
+    ifTheSaleBelongToMe = (sale) => {
+        const cookies = new Cookies();
+        let token = cookies.get("token")
+        axios.get("http://127.0.0.1:8989/if-sale-belong-to-user", {
+            params: {
+                token: token,
+                saleId:sale.id
+            }
+        }).then(response => {
+if(response.data){
+    this.setState({
+        border:"green"
+    })
+}else {
+    this.setState({
+        border:"red"
+    })
+}
+        })
+    }
     getSales=()=>{
         const cookies = new Cookies();
       let token=cookies.get("token")
-        axios.get("http://127.0.0.1:8989/get-all-sales-by-user",{
+        axios.get("http://127.0.0.1:8989/get-sales-by-user",{
             params: {
                 token:token
             }}).then(response=> {
@@ -37,7 +58,8 @@ componentDidMount() {
                 this.setState({
                     sales: response.data
                 })
-            }})}
+            }
+            })}
 
 
 
@@ -50,8 +72,9 @@ componentDidMount() {
 
                 {
                     this.filter().map(sale => {
+                        {this.ifTheSaleBelongToMe(sale)}
                         return (
-                            <Sale data={sale}/>
+                        <Sale data={sale} border={this.state.border}/>
                         )      })
                 }
                 <p><span>Green border means that you can use this promotions ,and red border means that you can't</span></p>

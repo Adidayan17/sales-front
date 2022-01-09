@@ -1,12 +1,12 @@
 import React from "react";
 
 
-
 function Sale (props) {
     console.log(props.data)
+    console.log(props.border)
     return (
        <div>
-           {props.data.belongTo ?
+           {props.border=="green" ?
                <div style={{
                    border: "green solid 4px",
                    width: "50%",

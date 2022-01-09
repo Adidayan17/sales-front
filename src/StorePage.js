@@ -9,7 +9,7 @@ class StorePage extends React.Component{
     state = {
         id:"",
         sales :[],
-        storeName:"asdfsdfs"
+        storeName:"Optic 2000"
 
     }
     componentDidMount() {

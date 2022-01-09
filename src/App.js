@@ -15,7 +15,7 @@ import StorePage from "./StorePage";
 
 class App extends React.Component {
     state = {
-        loggedIn :true,//hard coded !!!!!!
+        loggedIn :false,//hard coded !!!!!!
         textFromWebSocket:""
 
     }

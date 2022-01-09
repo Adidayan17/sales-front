@@ -8,35 +8,57 @@ import axios from "axios";
 class SettingsPage extends React.Component {
 
     state={
-        organization:[{organizationName:"haha",id:"6"}],
+        organization:[{organizationName:"haha",id:"6"},{organizationName:"kokokok",id:"7"}],
+        checked:false
     }
     componentDidMount() {
         this.getOrganizations()
     }
+    organizationBelong=(organizationId)=>{
+        let cookies=new Cookies();
+        let token=cookies.get("token");
+        axios.get("http://127.0.0.1:8989/if-user-belong-to-organization",{
+            params:{
+                token:token,
+                organizationId:organizationId
+            }
+        })
+            .then((response) => {
+                if (response.data) {
+                   this.setState({
+                       checked:true
+                   })
+                }else{
+                    this.setState({
+                        checked:false
+                    })
+                }
+            })
 
+    }
 
     handleChange=(e)=> {
         let checked = e.target.checked;
-        let saleId=e.target.value;
+        let organizationId=e.target.value;
         console.log(checked)
-        console.log(saleId)
+        console.log(organizationId)
         let cookies=new Cookies();
      let token=cookies.get("token");
         let data =new FormData();
         data.append("token",token)
-        data.append("saleId",saleId)
+        data.append("organizationId",organizationId)
         axios.post("http://127.0.0.1:8989/change-settings",data)
             .then((response)=>{
+                this.organizationBelong(organizationId)
+
             })
     }
-
-
     getOrganizations=()=> {
         axios.get("http://127.0.0.1:8989/get-organizations")
             .then((response) => {
                 if (response.data.length > 0) {
                     this.setState({
-                        organizations: response.data
+                        organizations:response.data
                     })
                 }
             })
@@ -46,12 +68,11 @@ class SettingsPage extends React.Component {
             <div style={{textAlign:"center"}}>
                 <h1>Settings <FiSettings/></h1>
                 <h2>Select the organizations that belong to you :</h2>
-
                 {this.state.organization.map(organization=>{
                     return(
-                        <div>
-                            <input type={"checkbox"} onChange={this.handleChange} value={organization.id}/><span>{organization.organizationName}</span>
-                        </div>
+                        <p>
+                            <input type={"checkbox"} onChange={this.handleChange} value={organization.id} checked={this.state.checked}/><label>{organization.organizationName}</label>
+                        </p>
                     )
                 })}
 

@@ -9,3 +9,22 @@
 text-decoration: none;
   color: black;
 }
+
+.buttons{
+  background:lightblue;
+  width:150px;
+  height:50px;
+  margin:5px;
+}
+.buttons:hover{
+ background: white;
+}
+.signIn{
+  background: #465bec;
+  width:150px;
+  height:50px;
+  margin:5px;
+}
+.signIn:hover{
+  background: white;
+}

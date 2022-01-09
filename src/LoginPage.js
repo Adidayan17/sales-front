@@ -90,10 +90,10 @@ signUp=()=>{
                         <input type="text" onChange={this.passwordChange} placeholder="Enter password.." minLength="6"/>
                     </p>
                 </div>
-                <button onClick={this.signUp} style={{background: "pink", width: "150px", height: "50px"}}>Sign Up
+                <button onClick={this.signUp} className={"buttons"}>Sign Up
                 </button>
                 <p>
-                    <button style={{background: "magenta", width: "150px", height: "50px"}}
+                    <button className={"signIn"}
                             onClick={this.login}>Sign in
                     </button>
                 </p>

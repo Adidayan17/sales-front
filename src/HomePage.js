@@ -17,12 +17,12 @@ class HomePage extends React.Component {
                 <h1 style={{color:"black"}}>Home Page <AiOutlineHome/></h1>
                 <div>
                     <p>
-                    <Link to={"/DashboardPage"}><button style={{background:"lightblue",width:"150px",height:"50px",margin:"5px"}}>Dashboard Page <GoDashboard/></button></Link>
-                    <Link to={"/ShopsListPage"}><button style={{background:"lightblue",width:"150px",height:"50px",margin:"5px"}}>Shop List <BsShop/></button></Link>
+                    <Link to={"/DashboardPage"}><button className={"buttons"}>Dashboard Page <GoDashboard/></button></Link>
+                    <Link to={"/ShopsListPage"}><button className={"buttons"}>Shop List <BsShop/></button></Link>
                     </p>
                     <p>
-                    <Link to={"/SettingsPage"}><button style={{background:"lightblue",width:"150px",height:"50px",margin:"5px"}}>Settings <FiSettings/></button></Link>
-                        <Link to={"/SearchPage"}><button style={{background:"lightblue",width:"150px",height:"50px",margin:"5px"}}>Search <BiSearch/></button></Link></p>
+                    <Link to={"/SettingsPage"}><button className={"buttons"}>Settings <FiSettings/></button></Link>
+                        <Link to={"/SearchPage"}><button className={"buttons"}>Search <BiSearch/></button></Link></p>
                 </div>
 
             </div>
