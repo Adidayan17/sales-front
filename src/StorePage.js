@@ -1,14 +1,10 @@
 import React from "react";
 
-
-
-
 class StorePage extends React.Component{
     state = {
 
 
     }
-
 
     render(){
         return(

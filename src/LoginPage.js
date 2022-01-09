@@ -53,15 +53,18 @@ signUp=()=>{
                    }
                }).then(response1=>{
                    if(response1){
+                       console.log("if yes go sett  "+response1.data)
                        this.setState({
-                           redirect:"/HomePage"
+                           redirectTo:"/SettingsPage"
+
                        })}
                        else {
+                       console.log("if not go home "+response1.data)
                        this.setState({
-                           redirect:"/SettingsPage"
+                           redirectTo:"/HomePage"
                        })
                    }})
-               window.location.reload();
+
             }
         })
 }
