@@ -27,30 +27,11 @@ class SearchPage extends React.Component {
         })
         return filtered;
     }
-    ifTheSaleBelongToMe = (sale) => {
-        const cookies = new Cookies();
-        let token = cookies.get("token")
-        axios.get("http://127.0.0.1:8989/if-sale-belong-to-user", {
-            params: {
-                token: token,
-                saleId:sale.id
-            }
-        }).then(response => {
-if(response.data){
-    this.setState({
-        border:"green"
-    })
-}else {
-    this.setState({
-        border:"red"
-    })
-}
-        })
-    }
+
     getSales=()=>{
         const cookies = new Cookies();
       let token=cookies.get("token")
-        axios.get("http://127.0.0.1:8989/get-sales-by-user",{
+        axios.get("http://127.0.0.1:8989/get-all-sales",{
             params: {
                 token:token
             }}).then(response=> {
@@ -60,8 +41,6 @@ if(response.data){
                 })
             }
             })}
-
-
 
     render() {
         return(
@@ -73,7 +52,7 @@ if(response.data){
                 {
                     this.filter().map(sale => {
                         return (
-                        <Sale data={sale} border={this.state.border}/>
+                        <Sale data={sale}/>
                         ) })
                 }
                 <p><span>Green border means that you can use this promotions ,and red border means that you can't</span></p>
