@@ -2,12 +2,13 @@ import './App.css';
 import React from "react";
 import LoginPage from "./LoginPage"
 import HomePage from "./HomePage"
+import {Redirect, Route} from "react-router";
 import SettingsPage from "./SettingsPage"
 import DashboardPage from "./DashboardPage"
 import ShopListPage from "./ShopsListPage"
 import SearchPage from "./SearchPage"
 import {BrowserRouter} from "react-router-dom";
-import {Route} from "react-router";
+//import {Route} from "react-router";
 import Cookies from "universal-cookie/es6";
 import NavigationBar from "./NavigationBar";
 import StorePage from "./StorePage";
@@ -74,7 +75,7 @@ class App extends React.Component {
                         <div>
 
                         {this.state.firstLogIn ==0 ? <div><NavigationBar/>
-                                <Route path={"/"} component={SettingsPage}/>
+                                <Redirect to={"/SettingsPage"}/>
                                 <Route path={"/HomePage"} component={HomePage}/>
                                 <Route path={"/SettingsPage"} component={SettingsPage}/>
                                 <Route path={"/DashboardPage"} component={DashboardPage}/>
@@ -84,7 +85,7 @@ class App extends React.Component {
                         </div>:
                             <div>
                             <NavigationBar/>
-                            <Route path={"/"} component={HomePage}/>
+                            <Redirect to={"/HomePage"}/>
                             <Route path={"/HomePage"} component={HomePage}/>
                             <Route path={"/SettingsPage"} component={SettingsPage}/>
                             <Route path={"/DashboardPage"} component={DashboardPage}/>
