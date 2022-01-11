@@ -25,6 +25,9 @@ class DashboardPage extends React.Component {
                     this.setState({
                         sales:response.data
                     })
+                }else{
+                    this.setState({sales:[]})
+
                 }
             })
     }
