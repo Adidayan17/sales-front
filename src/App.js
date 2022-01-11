@@ -33,28 +33,31 @@ class App extends React.Component {
         }
         if (cookies.get("token") && cookies.get("token").length > 0) {
             this.setState({loggedIn: true})
-            //  {
-            //     axios.get("http://127.0.0.1:8989/if-first-log-in", {
-            //         params: {
-            //             token: token
-            //         }
-            //     }).then(response => {
-            //         if (response.data) {
-            //             console.log("first log in " + response.data + " now")
-            //             this.setState({
-            //                 firstLogIn: 0
-            //             })
-            //             console.log("state " + this.state.firstLogIn)
-            //         } else {
-            //             console.log("first log in " + response.data + " now")
-            //             this.setState({
-            //                 firstLogIn: 1
-            //             })
-            //             console.log("state " + this.state.firstLogIn)
-            //
-            //         }
-            //     })
-            // }
+             {
+                axios.get("http://127.0.0.1:8989/if-first-log-in", {
+                    params: {
+                        token: token
+                    }
+                }).then(response => {
+                    if (response.data) {
+                        this.setState({
+                            firstLogIn: 0
+                        })
+                        let data =new FormData();
+                        data.append("token",token)
+                        axios.post("http://127.0.0.1:8989/inc_first_log_in",data)
+                            .then((response)=>{
+
+                            })
+
+                    } else {
+                        this.setState({
+                            firstLogIn: 1
+                        })
+
+                    }
+                })
+            }
         }
     }
     showSale=()=>{
