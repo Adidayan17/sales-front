@@ -20,8 +20,10 @@ class Organization extends React.Component{
                   organizationId: this.props.data.id
                 }
             }).then((response)=>{
-                if(response.data){
+                if(response.data)
+                {
                     this.setState({belong:true})
+
                 }else {
                     this.setState({belong:false})
 

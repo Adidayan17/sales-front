@@ -21,43 +21,37 @@ class Sale extends React.Component {
               saleId: this.props.data.id
           }
       }).then(response => {
-          if(response.data){
-              this.setState({
-                  border:"green"
-              })
-          }else {
-              this.setState({
-                  border:"red"
-              })
+          switch(response.data) {
+              case true: {
+                  this.setState({
+                      border: "green"
+                  })
+              }
+                  break;
+              case false: {
+                  this.setState({
+                      border: "red"
+                  })
+              }break;
           }
       })
   }
+
     render() {
 
         return (
             <div>
-                {this.state.border == "green" ?
-                    <div style={{
-                        border: "green solid 4px",
-                        width: "50%",
-                        textAlign: "center",
-                        marginBottom: "3%",
-                        marginLeft: "25%"
-                    }}>
-                        {this.props.data.saleText}
-                    </div> :
-                    <div style={{
-                        border: "red solid 4px",
-                        width: "50%",
-                        textAlign: "center",
-                        marginBottom: "3%",
-                        marginLeft: "25%"
-                    }}>
-                        {this.props.data.saleText}
-                    </div>
-                }
+                <div style={{
+                    border: "yellow solid 4px",
+                    width: "50%",
+                    textAlign: "center",
+                    marginBottom: "3%",
+                    marginLeft: "25%"
+                }}>
+                    <h3 style={{color:this.state.border}}>{this.props.data.saleText}</h3></div>
             </div>
         )
     }
 }
+
 export default Sale;

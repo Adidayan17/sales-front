@@ -52,13 +52,10 @@ class SearchPage extends React.Component {
                 {
                     this.filter().map(sale => {
                         return (
-                        <Sale data={sale}/>
+                        <Sale data={sale} key={sale.id}/>
                         ) })
                 }
-                <p><span>Green border means that you can use this promotions ,and red border means that you can't</span></p>
-
-
-
+                <p><span>Green means that you can use this promotions ,and red means that you can't</span></p>
             </div>
         )
 

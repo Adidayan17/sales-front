@@ -24,7 +24,7 @@ class LoginPage extends React.Component {
         })
     }
 
-signUp=()=>{
+    signUp=()=>{
         let data =new FormData();
         data.append("username",this.state.username)
         data.append("password",this.state.password)
@@ -37,34 +37,35 @@ signUp=()=>{
                 else {  alert("username already exist !")}
             })}
 
-    login=()=>{
+    login =()=>{
         axios.get("http://127.0.0.1:8989/log-in",{
             params: {
                 username: this.state.username,
                 password: this.state.password
-            } }).then(response=> {
-           if(response.data){
-                    this.setState({success:true});
-                    let cookies = new Cookies()
-                    cookies.set("token", response.data)
-               axios.get("http://127.0.0.1:8989/if-first-log-in",{
-                   params:{
-                       token:response.data
-                   }
-               }).then(response1=>{
-                   if(response1){
-                       this.setState({
-                           redirect:"/HomePage"
-                       })}
-                       else {
-                       this.setState({
-                           redirect:"/SettingsPage"
-                       })
-                   }})
-               window.location.reload();
+            } }).then(async response => {
+            if (response.data) {
+                this.setState({success: true});
+                let cookies = new Cookies()
+                cookies.set("token", response.data)
+                axios.get("http://127.0.0.1:8989/if-first-log-in", {
+                    params: {
+                        token: response.data
+                    }
+                }).then(response1 => {
+                    if (response1) {
+                        this.setState({
+                            redirectTo: "/HomePage"
+                        })
+                    } else {
+                        this.setState({
+                            redirectTo: "/SettingsPage"
+                        })
+                    }
+                })
+                window.location.reload();
             }
         })
-}
+    }
 
     render() {
         {if(this.state.success) return (<Redirect to={(this.state.redirectTo)}/>)}

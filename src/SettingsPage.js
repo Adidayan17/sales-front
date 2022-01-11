@@ -4,8 +4,6 @@ import {FiSettings} from "react-icons/fi";
 import axios from "axios";
 import Organization from "./Organization";
 
-
-
 class SettingsPage extends React.Component {
 
     state={
