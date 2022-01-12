@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
 
 
+
 class NavigationBar extends React.Component {
     state = {
         links: [{title: "Home", path: "/HomePage"}, {title: "Settings", path: "/SettingsPage"}
@@ -21,12 +22,8 @@ class NavigationBar extends React.Component {
     }
     render() {
         return (
-            <div style={{marginRight: "20px", marginLeft: "20px", paddingRight: "20px"}}>
-                <ul style={{ listStyleType:"none",
-                    margin: 0,
-                    padding: 0,
-                    overflow:"hidden",
-                    backgroundColor:"yellow"}}>
+            <div className={"navigation-bar"}>
+                <ul  className={"navigation-data"}>
                     {
                         this.state.links.map(link => {
                             return (

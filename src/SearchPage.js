@@ -32,10 +32,8 @@ class SearchPage extends React.Component {
     getSales=()=>{
         const cookies = new Cookies();
         let token=cookies.get("token")
-        axios.get("http://127.0.0.1:8989/get-all-sales",{
-            params: {
-                token:token
-            }}).then(response=> {
+        axios.get("http://127.0.0.1:8989/get-all-sales")
+            .then(response=> {
             if (response.data) {
                 this.setState({
                     sales: response.data

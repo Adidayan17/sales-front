@@ -72,6 +72,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+
                 <BrowserRouter>
                     {this.state.loggedIn ?
                         <div>
@@ -106,7 +107,7 @@ class App extends React.Component {
                 <div style={{marginBottom:"25%"}}>
                     {this.state.textFromWebSocket.length>0 && alert("Hello you have a sale to look at "+this.state.textFromWebSocket+"\n this sale is "+this.state.sOe)}
                 </div>
-          <h5 className={"credit"}>This project made by Amit & Adi Dayan & Barak Bitan</h5>
+                <p className={"credit"}>This project made by Amit & Adi Dayan & Barak Bitan</p>
         </div>
     );
 
