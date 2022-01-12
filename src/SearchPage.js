@@ -62,18 +62,14 @@ class SearchPage extends React.Component {
         let belong = false
         this.state.userSales.map((sale)=>{
             return(
-                <div>
-                    {
+                <div>{
                         sale.id == saleId  &&
-                        <div>
-                            {
-                                belong = true
-                            }
-                        </div>
-                    }
+                        <div>{
+                            belong = true
+                        }
+                        </div>}
                 </div>
-            )
-        })
+            )})
         return belong
     }
 
