@@ -15,7 +15,8 @@ class Sale extends React.Component {
                     marginBottom: "3%",
                     marginLeft: "25%"
                 }}>
-                    <h3 style={{color:this.props.border}}>{this.props.data.saleText}</h3></div>
+                    <h3 style={{color:"black"}}>Store : {this.props.data.store.storeName}</h3>
+                    <h3 style={{color:this.props.border}}>offer the sale: {this.props.data.saleText}</h3></div>
             </div>
         )
     }

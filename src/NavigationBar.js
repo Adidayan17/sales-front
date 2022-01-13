@@ -22,11 +22,7 @@ class NavigationBar extends React.Component {
     render() {
         return (
             <div style={{marginRight: "20px", marginLeft: "20px", paddingRight: "20px"}}>
-                <ul style={{ listStyleType:"none",
-                    margin: 0,
-                    padding: 0,
-                    overflow:"hidden",
-                    backgroundColor:"yellow"}}>
+                <ul className={"navi"}>
                     {
                         this.state.links.map(link => {
                             return (

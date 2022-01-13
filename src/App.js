@@ -22,14 +22,14 @@ class App extends React.Component {
         firstLogIn :""
     }
     componentDidMount() {
-        this.showSale();
+
         const cookies = new Cookies();
         let token = cookies.get("token");
         this.setState({token: token});
         const ws = new WebSocket("ws://localhost:8989/stream?token="+token);
         ws.onmessage = (message) => {
             const data = JSON.parse(message.data);
-            this.setState({textFromWebSocket: data.saleText,sOe:data.sOe});
+            this.setState({textFromWebSocket:data.saleText, sOe:data.sOe});
         }
         if (cookies.get("token") && cookies.get("token").length > 0) {
             this.setState({loggedIn: true})
@@ -60,14 +60,7 @@ class App extends React.Component {
             }
         }
     }
-    showSale=()=>{
-        const cookies = new Cookies();
-        let token = cookies.get("token");
-        this.setState({token: token});
-        let data=new FormData();
-        data.append("token",token)
-        axios.post("http://127.0.0.1:8989/start-sale",data).then()
-    }
+
 
     render() {
         return (
