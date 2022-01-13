@@ -29,24 +29,24 @@ margin-right: 20px;
   text-align: center;
 }
 
-/*credit{*/
-/*  text-align: center;*/
-/*}*/
-/*.active{*/
-/*text-decoration: none;*/
-/*  color: black;*/
-/*}*/
+credit{
+  text-align: center;
+}
+.active{
+text-decoration: none;
+  color: black;
+}
 
 
-/*.buttons:hover{*/
-/* background: white;*/
-/*}*/
-/*.signIn{*/
-/*  background: #465bec;*/
-/*  width:150px;*/
-/*  height:50px;*/
-/*  margin:5px;*/
-/*}*/
-/*.signIn:hover{*/
-/*  background: white;*/
-/*}*/
+.buttons:hover{
+ background: white;
+}
+.signIn{
+  background: #465bec;
+  width:150px;
+  height:50px;
+  margin:5px;
+}
+.signIn:hover{
+  background: white;
+}
