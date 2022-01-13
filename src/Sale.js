@@ -1,6 +1,5 @@
 import React from "react";
-import Cookies from "universal-cookie/es6";
-import axios from "axios";
+
 
 class Sale extends React.Component {
 
