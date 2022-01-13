@@ -71,6 +71,7 @@ class LoginPage extends React.Component {
         return (
 
             <div style={{textAlign:"center"}}>
+
                 <h1 style={{color: "black"}}>Welcome </h1>
                 <div>
                     <p> Please Enter Valid Username :

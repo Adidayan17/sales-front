@@ -1,38 +1,52 @@
 .App{
-/*padding-bottom: 60%;*/
+padding-bottom: 60%;
   background: lightgray;
   margin: auto;
 }
-.navi{
-list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow:hidden;
-  background-color:yellow;
-}
-.credit{
-  text-align: left;
-}
-.active{
-text-decoration: none;
+h1{
+  text-align: center;
   color: black;
 }
-
+.navigation-bar{
+margin-right: 20px;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.navigation-data{
+  list-style-type: none ;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: yellow;
+}
 .buttons{
   background:lightblue;
   width:150px;
   height:50px;
   margin:5px;
 }
-.buttons:hover{
- background: white;
+.button-home-page{
+  text-align: center;
 }
-.signIn{
-  background: #465bec;
-  width:150px;
-  height:50px;
-  margin:5px;
-}
-.signIn:hover{
-  background: white;
-}
+
+/*credit{*/
+/*  text-align: center;*/
+/*}*/
+/*.active{*/
+/*text-decoration: none;*/
+/*  color: black;*/
+/*}*/
+
+
+/*.buttons:hover{*/
+/* background: white;*/
+/*}*/
+/*.signIn{*/
+/*  background: #465bec;*/
+/*  width:150px;*/
+/*  height:50px;*/
+/*  margin:5px;*/
+/*}*/
+/*.signIn:hover{*/
+/*  background: white;*/
+/*}*/
