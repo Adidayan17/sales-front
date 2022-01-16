@@ -34,12 +34,12 @@ class SearchPage extends React.Component {
         let token=cookies.get("token")
         axios.get("http://127.0.0.1:8989/get-all-sales")
             .then(response=> {
-            if (response.data) {
-                this.setState({
-                    sales: response.data
-                })
-            }
-        })
+                if (response.data) {
+                    this.setState({
+                        sales: response.data
+                    })
+                }
+            })
         axios.get("http://127.0.0.1:8989/get-sales-by-user",{
             params:{
                 token:token
@@ -56,18 +56,20 @@ class SearchPage extends React.Component {
 
     }
 
-    doseSaleBelongToUser =(saleId)=>{
+    doseSaleBelongToUser =(sale)=>{
+
         let belong = false
-        this.state.userSales.map((sale)=>{
+        this.state.userSales.map((userSale)=>{
             return(
                 <div>{
-                        sale.id == saleId  &&
-                        <div>{
-                            belong = true
-                        }
-                        </div>}
+                    userSale.id == sale.id   &&
+                    <div>{
+                        belong = true
+                    }
+                    </div>}
                 </div>
             )})
+
         return belong
     }
 
@@ -83,7 +85,7 @@ class SearchPage extends React.Component {
                 {
                     this.filter().map(sale => {
                         return (
-                            <Sale data={sale} key={sale.id} border={this.doseSaleBelongToUser(sale.id)?"green":"red"}/>
+                            <Sale data={sale} key={sale.id} border={sale.availableForAll!=0?"green": this.doseSaleBelongToUser(sale)?"green":"red"}/>
                         ) })
                 }
                 <p><span>Green means that you can use this promotions ,and red means that you can't</span></p>

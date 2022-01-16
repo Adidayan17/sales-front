@@ -52,7 +52,7 @@ class LoginPage extends React.Component {
                         token:response.data
                     }
                 }).then(response1=>{
-                    if(response1){
+                    if(response1.data){
                         this.setState({
                             redirect:"/HomePage"
                         })}
@@ -61,8 +61,9 @@ class LoginPage extends React.Component {
                             redirect:"/SettingsPage"
                         })
                     }})
+
                   window.location.reload();
-            }
+            }else {alert("One or more details are wrong try again ")}
         })
     }
 
