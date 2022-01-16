@@ -13,72 +13,44 @@ import NavigationBar from "./NavigationBar";
 import StorePage from "./StorePage";
 import axios from "axios";
 
-
-let ALERT_TITLE = "New Notification";
-
-let ALERT_BUTTON_TEXT = "✔ Thanks";
-
-if (document.getElementById) {
-
-    window.alert = function (txt) {
-
-        createCustomAlert(txt);
-
-    }
-}
-function createCustomAlert(txt) {
-
-   let d = document;
-
-    if (d.getElementById("modalContainer")) return;
-
-   let mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
-
-    mObj.id = "modalContainer";
-
-    mObj.style.height = d.documentElement.scrollHeight + "px";
-
-   let alertObj = mObj.appendChild(d.createElement("div"));
-
-    alertObj.id = "alertBox";
-
-    if (d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
-
-    alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
-
-    alertObj.style.visiblity = "visible";
-
-   let h3 = alertObj.appendChild(d.createElement("h3"));
-
-    h3.appendChild(d.createTextNode(ALERT_TITLE));
-
-  let  msg = alertObj.appendChild(d.createElement("p"));
-
-//msg.appendChild(d.createTextNode(txt));
-
-    msg.innerHTML = txt;
-
-   let btn = alertObj.appendChild(d.createElement("a"));
-
-    btn.id = "closeBtn";
-
-    btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
-
-    btn.href = "#";
-
-    btn.focus();
-
-    btn.onclick = function () { removeCustomAlert(); return false; }
-
-    alertObj.style.display = "block";
-
-}
-
-function removeCustomAlert() {
-
-    document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-
-}
+//
+// let ALERT_TITLE = "New Notification";
+//
+// let ALERT_BUTTON_TEXT = "✔ Thanks";
+//
+// if (document.getElementById) {
+//
+//     window.alert = function (txt) {
+//
+//         createCustomAlert(txt);
+//     }
+// }
+// function createCustomAlert(txt) {
+//    let d = document;
+//     if (d.getElementById("modalContainer")) return;
+//    let mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+//     mObj.id = "modalContainer";
+//     mObj.style.height = d.documentElement.scrollHeight + "px";
+//    let alertObj = mObj.appendChild(d.createElement("div"));
+//     alertObj.id = "alertBox";
+//     if (d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+//     alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
+//     alertObj.style.visiblity = "visible";
+//    let h3 = alertObj.appendChild(d.createElement("h3"));
+//     h3.appendChild(d.createTextNode(ALERT_TITLE));
+//   let  msg = alertObj.appendChild(d.createElement("p"));
+//     msg.innerHTML = txt;
+//    let btn = alertObj.appendChild(d.createElement("a"));
+//     btn.id = "closeBtn";
+//     btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+//     btn.href = "#";
+//     btn.focus();
+//     btn.onclick = function () { removeCustomAlert(); return false; }
+//     alertObj.style.display = "block";
+// }
+// function removeCustomAlert() {
+//    document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+// }
 
 class App extends React.Component {
     state = {
