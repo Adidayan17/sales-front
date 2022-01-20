@@ -37,14 +37,18 @@ class DashboardPage extends React.Component {
             <div style={{textAlign:"center"}}>
                 <h1>Dashboard Page <GoDashboard/></h1>
                 <h3>Your promotions are here :) </h3>
-                {this.state.sales.map(sale=>{
-                    return(
-                        <div>
-                            <Sale data={sale}/>
-                        </div>
-                    )
-                })}
+                {
+                    this.state.sales.length > 0 ?
+                        this.state.sales.map(sale => {
+                            return (
+                                <div>
+                                    <Sale data={sale}/>
+                                </div>
+                            )
+                        }):
+                        <div>You have nothing to look at yet :(</div>
 
+                }
 
             </div>
         )

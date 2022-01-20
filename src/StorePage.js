@@ -56,7 +56,9 @@ class StorePage extends React.Component{
         return(
             <div style={{textAlign:"center"}}>
                 <h1>{this.state.storeName.toUpperCase()} <AiOutlineShop/></h1>
-                {this.state.sales.map((sale)=>{
+
+                {this.state.sales.length>0?
+                    this.state.sales.map((sale)=>{
                     return(
                         <div>
                             <div>
@@ -67,7 +69,9 @@ class StorePage extends React.Component{
                             </p>
                         </div>
                     )
-                })}
+                }):
+                    <div>This store don't offer any promotions </div>
+                }
 
             </div>
         )
