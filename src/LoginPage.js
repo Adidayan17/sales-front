@@ -78,7 +78,7 @@ class LoginPage extends React.Component {
         }
         return (
             <div>
-            <h1 style={{color: "black"}}>Welcome </h1>
+            <h1>Welcome </h1>
             <div className={"log-in-form"}>
                 <div >
                     <p> Please Enter Valid Username :

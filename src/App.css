@@ -5,7 +5,7 @@
 
 h1 {
     text-align: center;
-    color: black;
+    color: #7fe8c4;
 }
 .log-in-form{
     text-align: center;
@@ -87,12 +87,12 @@ h1 {
 
 
 .log-out-button {
-    background: red;
+    background: #ffffff;
     float: right;
 }
 
 .log-out-button:hover {
-    background: white;
+    background: #ff0000;
 }
 
 /*#modalContainer {*/

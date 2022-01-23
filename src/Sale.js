@@ -8,7 +8,7 @@ class Sale extends React.Component {
         return (
             <div>
                 <div style={{
-                    border: "#7fe8c4 solid 10px",
+                    border: "lightgray solid 10px",
                     width: "50%",
                     textAlign: "center",
                     marginBottom: "3%",
