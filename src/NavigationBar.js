@@ -4,12 +4,11 @@ import {NavLink} from "react-router-dom";
 import Cookies from "universal-cookie/es6";
 
 
-
 class NavigationBar extends React.Component {
     state = {
         links: [{title: "Home", path: "/HomePage"}, {title: "Settings", path: "/SettingsPage"}
-            , {title: "Dashboard", path:"/DashboardPage"},
-            {title: "Shop List", path:"/ShopsListPage"},{title:"Search", path:"/SearchPage"}
+            , {title: "Dashboard", path: "/DashboardPage"},
+            {title: "Shop List", path: "/ShopsListPage"}, {title: "Search", path: "/SearchPage"}
 
         ]
     }
@@ -20,16 +19,18 @@ class NavigationBar extends React.Component {
         cookies.remove("token");
         window.location.reload();
     }
+
     render() {
         return (
             <div className={"navigation-bar"}>
-                <ul  className={"navigation-data"}>
+                <ul className={"navigation-data"}>
                     {
                         this.state.links.map(link => {
                             return (
                                 <NavLink to={link.path} className={"link"} activeClassName={"active"}>
-                                    <li style={{float: "left",direction:"none",textDecoration:"none"}}>
-                                        <i style={{margin:"10px" ,color:"black"}}>
+                                    <li style={{float: "left", direction: "none", textDecoration: "none"}}
+                                        className={"link"}>
+                                        <i style={{margin: "10px", color: "black"}}>
                                             {link.title}
                                         </i>
                                     </li>
@@ -38,10 +39,11 @@ class NavigationBar extends React.Component {
                         })
                     }
 
-                <button style={{background:"red",float:"right"}} onClick={this.logOut}>Log Out</button>
+                    <button className={"log-out-button"} onClick={this.logOut}>Log Out</button>
                 </ul>
             </div>
         )
     }
 }
+
 export default NavigationBar;

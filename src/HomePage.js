@@ -12,8 +12,8 @@ class HomePage extends React.Component {
 
     render() {
         return(
-            <div >
-                <h1 >Home Page <AiOutlineHome/></h1>
+            <div>
+                <h1>Home Page <AiOutlineHome/></h1>
                 <div className={"button-home-page"}>
                     <p>
                     <Link to={"/DashboardPage"}><button className={"buttons"}>Dashboard Page <GoDashboard/></button></Link>
