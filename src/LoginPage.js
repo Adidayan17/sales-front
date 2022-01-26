@@ -6,7 +6,7 @@ import {Redirect} from "react-router";
 class LoginPage extends React.Component {
 
     state = {
-        username: "",
+        username:"",
         password: "",
         success: false,
         redirectTo: "/"
@@ -86,14 +86,14 @@ class LoginPage extends React.Component {
                 </div>
                 <div>
                     <p> Please Enter Valid Password :
-                        <input type="text" onChange={this.passwordChange} placeholder="Enter password.." minLength="6"/>
+                        <input type="text" onChange={this.passwordChange} placeholder="Enter password.." />
                     </p>
                 </div>
-                <button onClick={this.signUp} className={"sign-up"}>Sign Up
+                <button onClick={this.signUp} className={"sign-up"} disabled={this.state.password.length==0||this.state.username==0}>Sign Up
                 </button>
                 <p>
                     <button className={"sign-in"}
-                            onClick={this.login}>Sign In
+                            onClick={this.login} disabled={this.state.password.length==0||this.state.username==0}>Sign In
                     </button>
                 </p>
             </div>

@@ -95,17 +95,17 @@ h1 {
     background: #ff0000;
 }
 
-/*#modalContainer {*/
-/*  position: fixed;*/
-/*  width: 350px;*/
-/*  height: 200px;*/
-/*  top: 50vh;*/
-/*  right: 10px;*/
-/*  background: #ff0000;*/
-/*  font-size: 20pt;*/
-/*  border-radius: 20px;*/
-/*  color: #ffffff;*/
-/*  opacity: 0.8;*/
-/*  box-shadow: #de4848 2px 2px;*/
+#modalContainer {
+  position: fixed;
+  width: 350px;
+  height: 200px;
+  top: 50vh;
+  right: 10px;
+  background: #20ff00;
+  font-size: 20pt;
+  border-radius: 20px;
+  color: #ffffff;
+  opacity: 0.8;
+  box-shadow: #676767 2px 2px;
 
-/*}*/
+}
